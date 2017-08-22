@@ -21,23 +21,6 @@ public class Split2 {
             return;
         }
 
-        // обработка
-        String result = n + " = ";
-        double b = n;
-        while (b != 0) {
-            int a = 1;
-            int i;
-            for (i = 0; a <= b; i++) {
-                a *= 2;
-            }
-            if (a > 1) {
-                a = a / 2;
-                i -= 1;
-            }
-            result += "2^" + i + " + ";
-            b = b - a;
-        }
-
         System.out.println(getSplit(n));
     }
 
