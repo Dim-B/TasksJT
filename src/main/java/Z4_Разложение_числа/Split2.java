@@ -38,6 +38,27 @@ public class Split2 {
             b = b - a;
         }
 
-        System.out.println(result.substring(0, result.length() - 3));
+        System.out.println(getSplit(n));
+    }
+
+    public static String getSplit(int n){
+        String result = n + " = ";
+        double b = n;
+        while (b != 0) {
+            int a = 1;
+            int i;
+            for (i = 0; a <= b; i++) {
+                a *= 2;
+            }
+            if (a > 1) {
+                a = a / 2;
+                i -= 1;
+            }
+            result += "2^" + i + " + ";
+            b = b - a;
+        }
+
+        return result.substring(0, result.length() - 3);
+
     }
 }
