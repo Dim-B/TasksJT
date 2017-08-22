@@ -13,7 +13,7 @@ public class NaturalIntegers {
     public static void main(String[] args) throws IOException {
         int n;
         int[] nums;
-        int[] result;
+        List<Integer> result = new ArrayList<Integer>();
 
         // ввод ланных
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -37,20 +37,25 @@ public class NaturalIntegers {
 
         // обработка
         System.out.println("Выполняется обработка...");
-        List<Integer> list = new ArrayList<Integer>();
-        for (int i = 1; i < n - 1; i++) {
+        result = getNums(nums);
+
+        // вывод
+        if (result.isEmpty())
+            System.out.println("Во введенной последовательности не найдено чисел удовлетворяющих условию");
+        else {
+            System.out.println("Результат:");
+            for (int num : result) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+
+    public static ArrayList<Integer> getNums(int[] nums) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 1; i < nums.length - 1; i++) {
             if (nums[i - 1] < nums[i] && nums[i] < nums[i + 1])
                 list.add(nums[i]);
         }
-        result = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
-        }
-
-        // вывод
-        System.out.println("Результат:");
-        for (int num : result) {
-            System.out.print(num + " ");
-        }
+        return list;
     }
 }
