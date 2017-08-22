@@ -31,7 +31,7 @@ public class SimpleNumbers {
             System.out.printf("Числа %d и %d НЕ являются взаимно простыми. НОД = %d", n, m, nod(n, m));
     }
 
-    private static int nod(int a, int b) {
+    public static int nod(int a, int b) {
         if (b == 0)
             return Math.abs(a);
         return nod(b, a % b);

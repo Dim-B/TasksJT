@@ -16,19 +16,6 @@ public class MatrixProduct {
         int n, k, m;
 
         // ввод ланных
-        if (false) { // взять готовые массивы или вводить
-            a = new double[][]{
-                    {2, 0, -1},
-                    {0, -2, 2}};
-            b = new double[][]{
-                    {4, 1, 0},
-                    {3, 2, 1},
-                    {0, 1, 0}};
-            //a*b =  8  1  0
-            //      -6 -2 -2
-            n = a.length;
-            m = b[0].length;
-        } else {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             try {
                 System.out.print("Введите число n: ");
@@ -38,7 +25,7 @@ public class MatrixProduct {
                 System.out.print("Введите число m: ");
                 m = Integer.parseInt(reader.readLine());
                 if (n < 1 || k < 1 || m < 1) {
-                    throw new NumberFormatException(); // по хорошему можно создать свой Exception
+                    throw new NumberFormatException();
                 }
                 a = new double[n][k];
                 b = new double[k][m];
@@ -61,7 +48,7 @@ public class MatrixProduct {
                 System.out.println("Введены неверные данные");
                 return;
             }
-        }
+
         //вычисление
         System.out.println("Выполняется вычисление...");
         c = productMatrix(a, b);
@@ -76,7 +63,7 @@ public class MatrixProduct {
         }
     }
 
-    private static double[][] productMatrix(double a[][], double b[][]) {
+    public static double[][] productMatrix(double a[][], double b[][]) {
         int n = a.length;
         int k = a[0].length;
         int m = b[0].length;
