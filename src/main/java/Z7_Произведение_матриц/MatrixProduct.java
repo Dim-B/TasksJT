@@ -33,14 +33,14 @@ public class MatrixProduct {
                 for (int i = 0; i < n; i++) {
                     for (int j = 0; j < k; j++) {
                         System.out.printf("Введите элемент A[%d][%d]: ", i, j);
-                        a[i][j] = Integer.parseInt(reader.readLine());
+                        a[i][j] = Double.parseDouble(reader.readLine());
                     }
                 }
                 System.out.println("Введите элементы матрицы B:");
                 for (int i = 0; i < k; i++) {
                     for (int j = 0; j < m; j++) {
                         System.out.printf("Введите элемент B[%d][%d]: ", i, j);
-                        b[i][j] = Integer.parseInt(reader.readLine());
+                        b[i][j] = Double.parseDouble(reader.readLine());
                     }
                 }
                 reader.close();
