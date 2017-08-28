@@ -8,8 +8,12 @@ package Z11_Геометрические_фигуры;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
-public class GeometricShapes extends JFrame {
+public class GeometricShapes extends JFrame implements Runnable {
+
+    public ArrayList<Shape> shapes = new ArrayList<>();
+
     public static void main(String[] args) {
         new GeometricShapes("Геометрические фигуры");
     }
@@ -17,41 +21,36 @@ public class GeometricShapes extends JFrame {
     public GeometricShapes(String title) throws HeadlessException {
         super(title);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setBounds(300, 200, 700, 500);
+        setBounds(200, 100, 815, 635);
         setBackground(Color.BLACK);
-        Field field = new Field();
-        add(field);
+
+        shapes.add(new Circle(100, 100));
+        shapes.add(new Square(200, 100));
+        shapes.add(new Triangle(100, 200));
+        shapes.add(new Pentagon(200, 200));
+
+        add(new Field(shapes));
         setResizable(false);
         setVisible(true);
+
+        new Thread(this).start();
     }
 
 
-}
-
-class Field extends JPanel {
     @Override
-    public void paint(Graphics g) {
+    public void run() {
+        while (true) {
+            for (Shape s : shapes) {
+                s.move();
+            }
+            repaint();
+            try{
+                Thread.sleep(100);
+            }
+            catch(InterruptedException e){
+            }
 
-        g.setColor(Color.ORANGE);
-        g.fillRect(50, 50, 20, 20);
-
-        g.setColor(Color.red);
-        g.fillOval(100, 150, 20, 20);
-
-        g.setColor(Color.green);
+        }
     }
 }
 
-abstract class Shape extends JPanel {
-    int x;
-    int y;
-    Color color;
-    int speed;
-
-    public Shape(int x, int y, Color color, int speed) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
-        this.speed = speed;
-    }
-}
