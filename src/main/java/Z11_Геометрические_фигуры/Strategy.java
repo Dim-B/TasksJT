@@ -5,8 +5,8 @@ import java.util.Random;
 public class Strategy {
 
     Random random = new Random();
-    private double dropSpeed = random.nextDouble() + 0.1;
-    private double angleSpeed = random.nextDouble() + 0.1;
+    private double dropSpeed = random.nextDouble() + 0.2;
+    private double angleSpeed = random.nextDouble() + 0.2;
     private double x;
     private double y;
 

@@ -9,7 +9,7 @@ public class Pentagon extends Shape {
 
     @Override
     protected void paintComponent(Graphics g) {
-        g.setColor(Color.CYAN);
+        g.setColor(Color.MAGENTA);
         g.fillPolygon(new int[]{x - 7, x + 7, x + 12, x, x - 12}, new int[]{y + 10, y + 10, y - 4, y - 12, y - 4}, 5);
     }
 

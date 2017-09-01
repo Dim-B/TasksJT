@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class GeometricShapes extends JFrame implements Runnable {
 
     private ArrayList<Shape> shapes = new ArrayList<>();
-
     public static void main(String[] args) {
         new GeometricShapes("Геометрические фигуры");
     }
@@ -21,10 +20,10 @@ public class GeometricShapes extends JFrame implements Runnable {
     private GeometricShapes(String title) throws HeadlessException {
         super(title);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setBounds(200, 100, 815, 635);
+        setBounds(150, 100, 810, 630);
         setBackground(Color.BLACK);
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 20; i++) {
             shapes.add(Shape.getShape());
         }
 

@@ -9,7 +9,7 @@ public class Circle extends Shape {
 
     @Override
     protected void paintComponent(Graphics g) {
-        g.setColor(Color.RED);
+        g.setColor(Color.GREEN);
         g.fillOval(x - 10, y - 10, 20, 20);
     }
 
