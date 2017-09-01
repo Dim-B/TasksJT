@@ -23,7 +23,7 @@ public class GeometricShapes extends JFrame implements Runnable {
         setBounds(150, 100, 810, 630);
         setBackground(Color.BLACK);
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             shapes.add(Shape.getShape());
         }
 
@@ -43,6 +43,7 @@ public class GeometricShapes extends JFrame implements Runnable {
                 int xc = 405;
                 if (Math.sqrt(Math.pow((xc - shapes.get(i).getX()), 2) + Math.pow((yc - shapes.get(i).getY()), 2)) < 50) {
                     shapes.get(i).remove(shapes);
+                    shapes.add(Shape.getShape());
                 }
             }
             repaint();

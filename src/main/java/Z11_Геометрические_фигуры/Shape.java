@@ -43,13 +43,13 @@ abstract class Shape extends JComponent {
         Random random = new Random();
         switch (random.nextInt(4)) {
             case 0:
-                return new Circle(random.nextInt(500) + 100, random.nextInt(600) + 15);
+                return new Circle(random.nextInt(600) + 100, random.nextInt(600) + 15);
             case 1:
-                return new Square(random.nextInt(500) + 200, random.nextInt(600) + 15);
+                return new Square(random.nextInt(600) + 100, random.nextInt(600) + 15);
             case 2:
-                return new Triangle(random.nextInt(500) + 200, random.nextInt(600) + 15);
+                return new Triangle(random.nextInt(600) + 100, random.nextInt(600) + 15);
             default:
-                return new Pentagon(random.nextInt(500) + 200, random.nextInt(600) + 15);
+                return new Pentagon(random.nextInt(600) + 100, random.nextInt(600) + 15);
         }
     }
 
