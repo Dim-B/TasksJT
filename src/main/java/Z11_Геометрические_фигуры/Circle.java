@@ -10,12 +10,7 @@ public class Circle extends Shape {
     @Override
     protected void paintComponent(Graphics g) {
         g.setColor(Color.RED);
-        g.fillOval(getX() - 10, getY() - 10, 20, 20);
+        g.fillOval(x - 10, y - 10, 20, 20);
     }
 
-    @Override
-    void move() {
-        x = Strategy.getX(x, y);
-        y = Strategy.getY(x, y);
-    }
 }

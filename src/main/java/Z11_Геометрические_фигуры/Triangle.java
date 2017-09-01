@@ -13,8 +13,4 @@ public class Triangle extends Shape {
         g.fillPolygon(new int[]{x - 10, x + 10, x}, new int[]{y + 10, y + 10, y - 10}, 3);
     }
 
-    @Override
-    void move() {
-        x++;
-    }
 }

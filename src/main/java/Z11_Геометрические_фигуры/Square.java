@@ -10,11 +10,7 @@ public class Square extends Shape {
     @Override
     protected void paintComponent(Graphics g) {
         g.setColor(Color.YELLOW);
-        g.fillRect(getX() - 10, getY() - 10, 20, 20);
+        g.fillRect(x - 10, y - 10, 20, 20);
     }
 
-    @Override
-    void move() {
-        x++;
-    }
 }

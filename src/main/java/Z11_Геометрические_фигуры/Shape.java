@@ -2,18 +2,14 @@ package Z11_Геометрические_фигуры;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
 
-public abstract class Shape extends JComponent {
+abstract class Shape extends JComponent {
     int x;
     int y;
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
+    private Strategy strategy;
 
     @Override
     public int getX() {
@@ -25,12 +21,36 @@ public abstract class Shape extends JComponent {
         return y;
     }
 
-    public Shape(int x, int y) {
+    Shape(int x, int y) {
         this.x = x;
         this.y = y;
+        strategy  = new Strategy(x, y);
     }
 
     protected abstract void paintComponent(Graphics g);
 
-    abstract void move();
+    void move() {
+        strategy.calculateNextPoint();
+        x = strategy.getNextX();
+        y = strategy.getNextY();
+    }
+
+    public void remove(ArrayList<Shape> shapes) {
+        shapes.remove(this);
+    }
+
+    static Shape getShape() {
+        Random random = new Random();
+        switch (random.nextInt(4)) {
+            case 0:
+                return new Circle(random.nextInt(815), random.nextInt(635));
+            case 1:
+                return new Square(random.nextInt(815), random.nextInt(635));
+            case 2:
+                return new Triangle(random.nextInt(815), random.nextInt(635));
+            default:
+                return new Pentagon(random.nextInt(815), random.nextInt(635));
+        }
+    }
+
 }

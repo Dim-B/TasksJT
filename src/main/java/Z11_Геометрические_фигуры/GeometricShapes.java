@@ -12,22 +12,21 @@ import java.util.ArrayList;
 
 public class GeometricShapes extends JFrame implements Runnable {
 
-    public ArrayList<Shape> shapes = new ArrayList<>();
+    private ArrayList<Shape> shapes = new ArrayList<>();
 
     public static void main(String[] args) {
         new GeometricShapes("Геометрические фигуры");
     }
 
-    public GeometricShapes(String title) throws HeadlessException {
+    private GeometricShapes(String title) throws HeadlessException {
         super(title);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(200, 100, 815, 635);
         setBackground(Color.BLACK);
 
-        shapes.add(new Circle(100, 100));
-        shapes.add(new Square(200, 100));
-        shapes.add(new Triangle(100, 200));
-        shapes.add(new Pentagon(200, 200));
+        for (int i = 0; i < 100; i++) {
+            shapes.add(Shape.getShape());
+        }
 
         add(new Field(shapes));
         setResizable(false);
@@ -36,18 +35,21 @@ public class GeometricShapes extends JFrame implements Runnable {
         new Thread(this).start();
     }
 
-
     @Override
     public void run() {
-        while (true) {
-            for (Shape s : shapes) {
-                s.move();
+        while (!shapes.isEmpty()) {
+            for (int i = 0; i < shapes.size(); i++) {
+                shapes.get(i).move();
+                int yc = 285;
+                int xc = 405;
+                if (Math.sqrt(Math.pow((xc - shapes.get(i).getX()), 2) + Math.pow((yc - shapes.get(i).getY()), 2)) < 50) {
+                    shapes.get(i).remove(shapes);
+                }
             }
             repaint();
-            try{
+            try {
                 Thread.sleep(100);
-            }
-            catch(InterruptedException e){
+            } catch (InterruptedException e) {
             }
 
         }
