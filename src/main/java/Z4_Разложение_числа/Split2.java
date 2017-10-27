@@ -10,7 +10,6 @@ public class Split2 {
     public static void main(String[] args) throws IOException {
         int n;
 
-        // ввод ланных
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число: ");

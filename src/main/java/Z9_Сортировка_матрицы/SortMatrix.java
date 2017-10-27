@@ -11,7 +11,6 @@ public class SortMatrix {
         int n;
         int[][] x;
 
-        // ввод ланных
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число n: ");

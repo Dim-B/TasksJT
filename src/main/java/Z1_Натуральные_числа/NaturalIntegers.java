@@ -15,7 +15,6 @@ public class NaturalIntegers {
         int[] nums;
         List<Integer> result = new ArrayList<Integer>();
 
-        // ввод ланных
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число n: ");

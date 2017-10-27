@@ -11,7 +11,6 @@ public class SimpleNumbers {
         int n;
         int m;
 
-        // ввод ланных
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число n: ");

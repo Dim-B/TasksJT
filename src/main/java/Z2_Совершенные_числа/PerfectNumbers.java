@@ -13,7 +13,6 @@ public class PerfectNumbers {
         long n1;
         long n2;
 
-        // ввод ланных
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число n1: ");

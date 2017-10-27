@@ -13,7 +13,6 @@ public class NondecreasingSequence {
 
         int[] b = new int[25];
 
-        // ввод ланных
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число n: ");
