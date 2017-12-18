@@ -1,6 +1,6 @@
 package Z16_Римская_система;
 
-import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class DigitalToRomanConverterTest {
     HashMap<Integer, String> numRes = new HashMap<Integer, String>();
 
-    @After
+    @Before
     public void initialize() {
         numRes.put(1, "I");
         numRes.put(2, "II");
@@ -23,7 +23,7 @@ public class DigitalToRomanConverterTest {
         numRes.put(9, "IX");
         numRes.put(10, "X");
         numRes.put(11, "XI");
-        numRes.put(15, "XIV");
+        numRes.put(14, "XIV");
         numRes.put(18, "XVIII");
         numRes.put(19, "XIX");
         numRes.put(99, "XCIX");
