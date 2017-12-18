@@ -23,7 +23,7 @@ public class DigitalToRomanConverter {
                 System.out.println("Поддерживаются только числа в диапазоне от 1 до 3999");
             else
                 System.out.printf("Число %s в римской системе счисления: %s%n", str, digitalToRoman(Integer.parseInt(str)));
-        else if (str.matches("^[IVXLCDM]+$"))
+        else if (str.matches("^(M{0,3})(D?C{0,3}|C[DM])(L?X{0,3}|X[LC])(V?I{0,3}|I[VX])$"))
             System.out.printf("Число %s в десятичной системе счисления: %d%n", str, romanToDigital(str));
         else
             System.out.println("Введенная строка не является числом");
