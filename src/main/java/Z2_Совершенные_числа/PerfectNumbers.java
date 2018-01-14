@@ -16,9 +16,9 @@ public class PerfectNumbers {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число n1: ");
-            n1 = Integer.parseInt(reader.readLine());
+            n1 = Long.parseLong(reader.readLine());
             System.out.print("Введите число n2: ");
-            n2 = Integer.parseInt(reader.readLine());
+            n2 = Long.parseLong(reader.readLine());
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
